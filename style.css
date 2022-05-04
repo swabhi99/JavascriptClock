@@ -14,7 +14,7 @@ body {
     top: 40%;
     right: 50%;
     transform: translate(50%, -50%);
-    font-size: 150px;
+    font-size: 100px;
     white-space: nowrap;
 }
 .container2{
@@ -25,7 +25,7 @@ body {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    font-size: 70px;
+    font-size: 50px;
     white-space: nowrap;
 }
 
