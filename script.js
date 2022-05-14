@@ -7,6 +7,9 @@ const month = document.querySelector('.month')
 const year = document.querySelector('.year')
 const button = document.querySelector('button')
 const am = document.querySelector('.am')
+const html = document.querySelector('html')
+
+
 
 function displayTime(){
 const date = new Date()
@@ -62,18 +65,19 @@ let darkmode = true
 
  button.addEventListener('click',()=>{
      if(darkmode){
-     document.querySelector('body').style.background=`#f5f0f0`
-     document.querySelector('body').style.color='black'
-     button.innerText = 'Dark-Mode'
+       const dataTheme = html.getAttribute('data-theme')
+       localStorage.setItem("theme", dataTheme);
+       (localStorage.theme === 'dark') ? html.setAttribute('data-theme', 'light'): html.setAttribute('data-theme', 'dark');
      darkmode=false
      }else{
-        document.querySelector('body').style.background='black'
-        document.querySelector('body').style.color='white'
-        button.innerText = 'Light-Mode'
-        darkmode=true
+      const dataTheme = html.getAttribute('data-theme')
+      localStorage.setItem("theme", dataTheme);
+      (localStorage.theme === 'light') ? html.setAttribute('data-theme', 'dark'): html.setAttribute('data-theme', 'light');
+      darkmode=true
      }
  })
 
 
 
 setInterval(displayTime,1000)
+
