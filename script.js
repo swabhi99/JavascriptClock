@@ -68,11 +68,13 @@ let darkmode = true
        const dataTheme = html.getAttribute('data-theme')
        localStorage.setItem("theme", dataTheme);
        (localStorage.theme === 'dark') ? html.setAttribute('data-theme', 'light'): html.setAttribute('data-theme', 'dark');
+       button.innerText="DARK MODE"
      darkmode=false
      }else{
       const dataTheme = html.getAttribute('data-theme')
       localStorage.setItem("theme", dataTheme);
       (localStorage.theme === 'light') ? html.setAttribute('data-theme', 'dark'): html.setAttribute('data-theme', 'light');
+      button.innerText="LIGHT MODE"
       darkmode=true
      }
  })
