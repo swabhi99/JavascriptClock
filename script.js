@@ -6,12 +6,26 @@ const datedisplay = document.querySelector('.date')
 const month = document.querySelector('.month')
 const year = document.querySelector('.year')
 const button = document.querySelector('button')
+const am = document.querySelector('.am')
 
 function displayTime(){
 const date = new Date()
-hr.innerText = date.getHours()%12
-min.innerText = date.getMinutes()
-sec.innerText = date.getSeconds()
+if(date.getHours()%12 <10){
+  hr.innerText=`0${date.getHours()%12}`
+}else{
+  hr.innerText = date.getHours()%12
+}
+if(date.getMinutes() <10){
+  min.innerText=`0${date.getMinutes()}`
+}else{
+  min.innerText = date.getMinutes()
+}
+if(date.getSeconds() <10){
+  sec.innerText=`0${date.getSeconds()}`
+}else{
+ sec.innerText = date.getSeconds()
+}
+
   switch(date.getDay()){
       case 1:
           week.innerText="MON"
@@ -37,13 +51,18 @@ sec.innerText = date.getSeconds()
   datedisplay.innerText = date.getDate()
   month.innerText=date.toLocaleString('default', { month: 'short' })
   year.innerText=date.getFullYear()
+  if(date.getHours()>=12 && date.getHours()<24){
+    am.innerText='PM'
+  }else{
+    am.innerText='AM'
+  }
 }
 
 let darkmode = true
 
  button.addEventListener('click',()=>{
      if(darkmode){
-     document.querySelector('body').style.background='white'
+     document.querySelector('body').style.background=`#f5f0f0`
      document.querySelector('body').style.color='black'
      button.innerText = 'Dark-Mode'
      darkmode=false

@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <title>ClOCK</title>
 </head>
 <body>
-    
-   
-    <div class="container1">
-        
+  <div class="flex justify-center items-center h-screen flex-col gap-4">
+    <div class="flex justify-center text-7xl">
         <span class="hr"></span>:
         <span class="min"></span>:
         <span class="sec"></span>
-      
+        <span class="am text-sm self-end">PM</span>
     </div>
-    <div class="container2">
+    <div class="flex justify-center text-2xl">
         <span class="week"></span>,
         <span class="date"></span> -
         <span class="month"></span> -
         <span class="year"></span>
     
     </div>
-    <button type="button" class="btn btn-dark">Light Mode</button>
+    <div class="flex justify-center"><button class="btn">light mode</button></div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
